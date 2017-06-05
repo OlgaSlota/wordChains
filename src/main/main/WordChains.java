@@ -25,6 +25,7 @@ public class WordChains {
         } else {
             DictionariesProvider.setUpGraphForLength(startWord.length());
             Graph graph = dictionaryMap.get(startWord.length()).getGraph();
+            
             Vertex startVertex = getVertexForStringOrThrow(startWord, graph);
             Vertex endVertex = getVertexForStringOrThrow(endWord, graph);
             Optional<List<Vertex>> resultChain = graph.bfs(startVertex, endVertex);
